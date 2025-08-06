@@ -1,0 +1,39 @@
+Day 1 – Python Basics: Variables & Data Types
+
+What is Python?
+
+Python is a popular programming language used for data science, machine learning, automation, and web development.
+It’s easy to read, write, and learn.
+
+Variables: Used to store data.
+
+No need to declare data type — Python detects it automatically.
+
+Example:
+
+name = "SaiKavya"     # String
+age = 24              # Integer
+height = 5.4          # Float
+is_student = True     # Boolean
+
+
+Data Types:
+
+Type	Example	        Description
+int	10	        Whole number
+float	3.14	        Decimal number
+str	"hello"	        Text
+bool	True / False	Logical values
+
+
+Example:Type Checking
+
+x = 5.7
+print(type(x))  # Output: <class 'float'>
+
+String Methods:
+
+Example:
+greet = "hello"
+print(greet.upper())     # HELLO
+print(greet.replace("h", "y"))  # yello

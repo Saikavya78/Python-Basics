@@ -1,0 +1,67 @@
+Day 2 – Conditions & Loops
+
+Conditional Statements
+
+Used to make decisions based on conditions.
+
+Example:
+
+x = 10
+if x > 0:
+    print("Positive")
+elif x == 0:
+    print("Zero")
+else:
+    print("Negative")
+
+✅ Comparison Operators
+
+==: Equal
+
+!=: Not equal
+
+<, >, <=, >=: Less/Greater than
+
+✅ Logical Operators
+
+and: True if both are true
+
+or: True if at least one is true
+
+not: Reverse the result
+
+✅ Loops: for and while
+
+Example: for loop
+
+for i in range(5):
+    print(i)  # Prints 0 to 4
+
+Example: while loop
+
+count = 0
+while count < 3:
+    print(count)
+    count += 1
+
+✅ Loop Control
+
+break: exits the loop
+
+continue: skips to next iteration
+
+pass: does nothing (used as a placeholder)
+
+✅ Practice Examples
+
+Print even or odd number:
+num = 7
+if num % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+
+Print numbers divisible by 3 from 1 to 100:
+for i in range(1, 101):
+    if i % 3 == 0:
+        print(i)
