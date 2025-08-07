@@ -1,0 +1,155 @@
+Day 4: Python Functions, Lambda, and File Handling
+
+🧩 1. Functions in Python
+
+✅ What is a Function?
+A block of reusable code that performs a specific task.
+
+Syntax:
+
+def function_name(parameters):
+    # code block
+    return result
+
+Example:
+
+def greet(name):
+    return f"Hello, {name}"
+
+print(greet("SaiKavya"))  # Output: Hello, SaiKavya
+
+Parameters and Default Values:
+
+def add(a, b=5):
+    return a + b
+
+print(add(3))     # 3 + 5 = 8
+print(add(3, 4))  # 3 + 4 = 7
+
+Return vs Print:
+return gives output to be used elsewhere
+
+print just displays output
+
+Example:
+def square(x):
+    return x ** 2
+
+result = square(5)
+print(result)  # Output: 25
+
+
+🧩 2. Lambda (Anonymous) Functions
+✅ What is a Lambda?
+A one-line function without a name. Useful for short, simple operations.
+
+Syntax:
+
+lambda arguments: expression
+
+Example:
+
+square = lambda x: x * x
+print(square(4))  # Output: 16
+
+With map():
+Applies a function to each item in a list.
+
+Example:
+nums = [1, 2, 3]
+squared = list(map(lambda x: x**2, nums))
+print(squared)  # [1, 4, 9]
+
+With filter():
+Filters items that return True for the condition.
+
+Example:
+nums = [1, 2, 3, 4, 5]
+even = list(filter(lambda x: x % 2 == 0, nums))
+print(even)  # [2, 4]
+
+With sorted():
+
+Example:
+pairs = [(1, 3), (2, 2), (4, 1)]
+sorted_pairs = sorted(pairs, key=lambda x: x[1])
+print(sorted_pairs)  # [(4, 1), (2, 2), (1, 3)]
+
+
+🧩 3. File Handling
+✅ Opening and Reading a File:
+
+file = open("sample.txt", "r")
+print(file.read())
+file.close()
+✅ Writing to a File:
+
+file = open("output.txt", "w")
+file.write("This is a new line.")
+file.close()
+
+✅ Best Practice: Use with
+
+with open("sample.txt", "r") as f:
+    content = f.read()
+    print(content)
+
+✅ Reading File Line-by-Line:
+
+with open("sample.txt", "r") as f:
+    for line in f:
+        print(line.strip())
+
+✅ Working with CSV Files:
+
+import csv
+
+with open("data.csv", "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+
+
+🧪 Practice Challenges
+✅ Challenge 1: Prime Number Checker
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5)+1):
+        if n % i == 0:
+            return False
+    return True
+
+print(is_prime(7))  # True
+print(is_prime(10)) # False
+
+✅ Challenge 2: Sort Tuples by Second Element using Lambda
+
+tuples = [(1, 5), (2, 1), (3, 3)]
+sorted_tuples = sorted(tuples, key=lambda x: x[1])
+print(sorted_tuples)  # [(2, 1), (3, 3), (1, 5)]
+
+✅ Challenge 3: Count Lines and Words in a File
+
+def count_file(filename):
+    with open(filename, "r") as f:
+        lines = f.readlines()
+        word_count = sum(len(line.split()) for line in lines)
+        print("Lines:", len(lines))
+        print("Words:", word_count)
+
+# Create sample file before testing
+with open("sample.txt", "w") as f:
+    f.write("This is line one.\nThis is line two.")
+
+count_file("sample.txt")
+
+✅ Challenge 4: Save User Input to File
+
+def save_input():
+    name = input("Enter your name: ")
+    with open("user_data.txt", "w") as f:
+        f.write(f"User name: {name}")
+
+save_input()
